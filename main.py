@@ -57,11 +57,13 @@ while True:
                 logger.info('%f / %f = %f', num1, num2, Div.divide(num1,num2))
             except(ZeroDivisionError):
                 logger.warning('Divide by ZERO')
+                print('warning : Divide by Zero')
                 
             
         # check if user wants another calculation
         # break the while loop if answer is no
 
+        #End Loop
         ISDone = False
         while True:
 
