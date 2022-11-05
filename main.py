@@ -26,7 +26,7 @@ print("4.Divide")
 
 while True:
     # take input from the user
-    choice = input("Enter choice(1/2/3): ")
+    choice = input("Enter choice(1/2/3/4): ")
 
     # check if choice is one of the four options
     if choice in ('1', '2', '3', '4'):
@@ -61,9 +61,31 @@ while True:
             
         # check if user wants another calculation
         # break the while loop if answer is no
-        next_calculation = input("Let's do next calculation? (yes/no): ")
-        if next_calculation == "no":
+
+        ISDone = False
+        while True:
+
+            next_calculation = input("Let's do next calculation? (yes/no): ")
+            next_calculation = next_calculation.lower()
+
+            if next_calculation == "no":
+                no_check = input('Are you sure? (yes/no): ')
+                no_check = no_check.lower()
+                if no_check=='yes':
+                    ISDone = True
+                    break
+                elif no_check=='no':
+                    continue
+            elif next_calculation == "yes":
+                break
+            elif next_calculation == "why?":
+                continue
+            else:
+                break
+            
+        if ISDone:
             break
+
 
     else:
         print("Invalid Input")
